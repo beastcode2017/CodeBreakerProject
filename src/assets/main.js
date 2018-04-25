@@ -29,7 +29,7 @@ function setHiddenFields() {
       answer=0+answer;
     }
   }
-  attempt =0;
+  attempt.value =0;
 }
 function setMessage(msg) {
 document.getElementById('message').innerHTML=msg;
