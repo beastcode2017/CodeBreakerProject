@@ -11,7 +11,7 @@ function guess() {
 
     if (validateInput(input.value))
     {
-      attempt+=1;
+      attempt.value+=1;
     }
     else {
       return false;
@@ -47,5 +47,21 @@ function validateInput(var1) {
   }
 }
 
-function getResults() {
+function getResults(input) {
+  var position='<div>';
+  for(var k=0; k<input.length; k++){
+    var test = input.substr(k,1);
+    if (test === answer.value.substr(k,1)){
+      position =position+'<span class="glyphicon glyphicon-ok">'+k+'</span>';
+    }
+    else if(answer.value.indexOf(test)!==-1){
+      position=position+'<span class="glyphicon glyphicon-transfer">'+k+'</span>';
+    }
+    else {
+        position=position+'<span class="glyphicon glyphicon-remove">'+k+'</span>';
+      }
+  }
+  position=position+'</div>';
+  document.getElementById('results').innerHTML='<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">'
+  +'<span class="col-md-6">'+position+'</span></div class="col-md-6"></div class="row">';
 }
