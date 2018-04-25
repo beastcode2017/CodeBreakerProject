@@ -27,7 +27,7 @@ function setHiddenFields() {
   {
     while(answer.length<4)
     {
-      answer.value=0+answer.value;
+      answer.value='0'+answer.value;
     }
   }
   attempt.value =0;
