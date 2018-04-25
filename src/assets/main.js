@@ -32,8 +32,7 @@ function setHiddenFields() {
   attempt =0;
 }
 function setMessage(msg) {
-let placeHolder = document.getElementById('message');
-placeHolder.innerHTML(msg);
+document.getElementById('message').innerHTML=msg;
 }
 
 function validateInput(var1) {
