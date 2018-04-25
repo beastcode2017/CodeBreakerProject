@@ -32,7 +32,8 @@ function setHiddenFields() {
   attempt =0;
 }
 function setMessage(msg) {
-document.getElementById('message').innerHTML(msg);
+let placeHolder = document.getElementById('message');
+placeHolder.innerHTML(msg);
 }
 
 function validateInput(var1) {
@@ -46,6 +47,5 @@ function validateInput(var1) {
   }
 }
 
-function getResults(var2) {
-  document.getElementById('results').innerHTML('<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">');
+function getResults() {
 }
