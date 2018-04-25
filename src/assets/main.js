@@ -20,7 +20,8 @@ function guess() {
 
 //implement new functions here
 function setHiddenFields() {
-  answer = Math.floor(Math.random()*10000);
+  var input = Math.random();
+  answer = Math.floor(input*10000);
   answer = answer.toString();
   if(answer.length!==4)
   {
