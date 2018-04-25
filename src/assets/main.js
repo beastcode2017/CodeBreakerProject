@@ -20,7 +20,7 @@ function guess() {
 
 //implement new functions here
 function setHiddenFields() {
-  answer.value = Math.floor((Math.random()*10000));
+  answer.value = Math.floor(Math.random()*10000);
   answer = answer.toString();
   if(answer.length!==4)
   {
@@ -38,7 +38,7 @@ document.getElementById('message').innerHTML=msg;
 function validateInput(var1) {
   if (var1.length === 4)
   {
-    return true;
+    return true;i
   }
   else {
     setMessage("Guesses must be exactly 4 characters long.");
