@@ -39,6 +39,7 @@ function validateInput(var1) {
   if (var1.length === 4)
   {
     attempt.value +=1;
+    return true;
   }
   else {
     setMessage("Guesses must be exactly 4 characters long.");
