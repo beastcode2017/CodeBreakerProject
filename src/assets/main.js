@@ -24,9 +24,7 @@ function guess() {
       showReplay();
     }
     else if ((!getResults) && (attempt.value>=10)) {
-      setMessage("You Lose! :()");
-      showAnswer(false);
-      showReplay();
+      setMessage("You Lose! :(");
     }
     else {
       setMessage("Incorrect, try again.");
