@@ -102,5 +102,5 @@ function showAnswer(status) {
 
 function showReplay() {
   document.getElementById('guessing-div').style.display="none";
-  document.getElementById('replay-div').style.display="block";  
+  document.getElementById('replay-div').style.display="block";
 }
