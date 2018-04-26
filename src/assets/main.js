@@ -24,7 +24,7 @@ function guess() {
       showReplay();
     }
     else if ((getResults===false) && (attempt>=10)) {
-      setMessage("You Lose! :(");
+      setMessage("You Lose!:(");
       showAnswer(false);
       showReplay();
     }
