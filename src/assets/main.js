@@ -83,9 +83,7 @@ function getResults(input) {
   else if ((correct!==4)&&(attempt.value<10)){
     setMessage("Incorrect, try again.");
   }
-  else{
-    return false;
-  }
+
 
 }
 
