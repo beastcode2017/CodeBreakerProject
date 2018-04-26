@@ -91,10 +91,11 @@ function getResults(input) {
 
 function showAnswer(status) {
   document.getElementById('code').innerHTML = answer.value;
+  var total = document.getElementById('code');
   if (status){
-    document.getElementById('code').classList.add(' success');
+    total.className += ' success';
   }
   else {
-    document.getElementById('code').classList.add(' failure');
+    total.className += ' failure';
   }
 }
