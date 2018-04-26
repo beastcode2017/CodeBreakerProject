@@ -78,6 +78,9 @@ function getResults(input) {
     setMessage("Incorrect, try again.");
   }
   else {
+    setMessage("You Lose! :(");
+    showAnswer(false);
+    showReplay();
     return false;
   }
 }
