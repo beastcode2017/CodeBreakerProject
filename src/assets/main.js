@@ -40,7 +40,6 @@ document.getElementById('message').innerHTML=msg;
 function validateInput(var1) {
   if (var1.length === 4)
   {
-    attempt.value +=1;
     return true;
   }
   else {
