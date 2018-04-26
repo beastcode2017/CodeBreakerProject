@@ -74,13 +74,14 @@ function getResults(input) {
     showReplay();
     return true;
   }
-  else if (attempt.value >= 10){
+
+   if (attempt.value >= 10){
     setMessage("You Lose! :(");
     showAnswer(false);
     showReplay();
     return false;
   }
-  else if ((correct!==4)&&(attempt.value<10)){
+  else {
     setMessage("Incorrect, try again.");
   }
 
