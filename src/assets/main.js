@@ -16,19 +16,18 @@ function guess() {
     else {
       attempt.value+=1;
     }
-    getResults(input.value);
-    if ((correct ===4) && (input===answer.value)){
+    if (getResults(input.value)){
       setMessage("You Win! :)");
       showAnswer(true);
       showReplay();
-      return true;
     }
-
-     if (attempt.value >= 10){
+     else if (attempt.value >= 10){
       setMessage("You Lose! :(");
       showAnswer(false);
       showReplay();
-      return false;
+    }
+    else{
+      setMessage("Incorrect, try again.");
     }
 
 
@@ -64,12 +63,10 @@ function validateInput(var1) {
 
 function getResults(input) {
   var position='<div>';
-  var correct =0;
   for(var k=0; k<input.length; k++){
     var test = input.substr(k,1);
     if (test === answer.value.substr(k,1)){
       position =position+'<span class="glyphicon glyphicon-ok">'+k+'</span>';
-      correct+=1;
     }
     else if(answer.value.indexOf(test)!==-1){
       position=position+'<span class="glyphicon glyphicon-transfer">'+k+'</span>';
@@ -80,13 +77,11 @@ function getResults(input) {
   }
   position=position+'</div>';
   document.getElementById('results').innerHTML='<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">'
-  +'<span class="col-md-6">'+position+'</span></div class="col-md-6"></div class="row">';
+  +'<span class="col-md-6">'+position+'</span></div></div>';
   if ((correct ===4) && (input===answer.value)){
     return true;
   }
-  else {
     return false;
-  }
 
 }
 
