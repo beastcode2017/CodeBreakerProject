@@ -18,19 +18,7 @@ function guess() {
     }
     getResults(input.value);
 
-    if(getResults){
-      setMessage("You Win! :)");
-      showAnswer(true);
-      showReplay();
-    }
-    else if ((attempt.value < 10)) {
-      setMessage("Incorrect, try again.");
-    }
-    else {
-      setMessage("You Lose! :(");
-      showAnswer(false);
-      showReplay();
-    }
+
 }
 
 //implement new functions here
@@ -80,8 +68,12 @@ function getResults(input) {
   position=position+'</div>';
   document.getElementById('results').innerHTML='<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">'
   +'<span class="col-md-6">'+position+'</span></div class="col-md-6"></div class="row">';
-  if ((correct ===4) && (input===answer.value))
+  if ((correct ===4) && (input===answer.value)){
+    setMessage("You Win! :)");
+    showAnswer(true);
+    showReplay();
     return true;
+  }
   else {
     return false;
   }
