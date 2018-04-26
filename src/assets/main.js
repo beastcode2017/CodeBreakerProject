@@ -16,6 +16,13 @@ function guess() {
     else {
       attempt.value+=1;
     }
+    getResults();
+
+    if(getResults()){
+      setMessage("You Win! :)");
+      showAnswer(true);
+      showReplay();
+    }
 
 
 }
