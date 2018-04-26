@@ -9,13 +9,29 @@ function guess() {
       setHiddenFields();
     }
 
-    if (!(validateInput(input.value)))
+    if (!validateInput(input.value))
     {
       return false;
 
     }
     else {
       attempt.value+=1;
+    }
+
+    getResults();
+
+    if(getResults){
+      setMessage("You Win! :)");
+      showAnswer(true);
+      showReplay();
+    }
+    else if ((getResults===false) && (attempt>=10)) {
+      setMessage("You Lose! :(");
+      showAnswer(false);
+      showReplay();
+    }
+    else {
+      setMessage("Incorrect, try again.");
     }
 }
 
@@ -50,10 +66,12 @@ function validateInput(var1) {
 
 function getResults(input) {
   var position='<div>';
+  var correct =0;
   for(var k=0; k<input.length; k++){
     var test = input.substr(k,1);
     if (test === answer.value.substr(k,1)){
       position =position+'<span class="glyphicon glyphicon-ok">'+k+'</span>';
+      correct+=1;
     }
     else if(answer.value.indexOf(test)!==-1){
       position=position+'<span class="glyphicon glyphicon-transfer">'+k+'</span>';
@@ -65,4 +83,24 @@ function getResults(input) {
   position=position+'</div>';
   document.getElementById('results').innerHTML='<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">'
   +'<span class="col-md-6">'+position+'</span></div class="col-md-6"></div class="row">';
+  if ((correct ===4) && (input===answer.value))
+    return true;
+  else {
+    return false;
+  }
+}
+
+function showAnswer(status) {
+  document.getElementById('code').innerHTML = answer.value;
+  if (status){
+    document.getElementById('code').classList.add(' success');
+  }
+  else {
+    document.getElementById('code').classList.add(' failure');
+  }
+}
+
+function showReplay() {
+  document.getElementById('guessing-div').style.display="none";
+  document.getElementById('replay-div').style.display="block";  
 }
