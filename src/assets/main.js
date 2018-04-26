@@ -23,7 +23,7 @@ function guess() {
       showAnswer(true);
       showReplay();
     }
-    else if ((!getResults) && (attempt.value>=10)) {
+    if ((!getResults)&&(attempt.value>=10)) {
       setMessage("You Lose! :(");
     }
     else {
