@@ -23,8 +23,8 @@ function guess() {
       showAnswer(true);
       showReplay();
     }
-    else if ((getResults===false) && (attempt>=10)) {
-      setMessage("You Lose!");
+    else if ((getResults===false) && (attempt.value>=10)) {
+      setMessage("You Lose! :()");
       showAnswer(false);
       showReplay();
     }
