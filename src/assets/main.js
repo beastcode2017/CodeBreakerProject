@@ -11,11 +11,11 @@ function guess() {
 
     if (!validateInput(input.value))
     {
-      return false;
+      return;
     }
-    else {
-      attempt.value+=1;
-    }
+
+      attempt.value++
+
     if (getResults(input.value)){
       setMessage("You Win! :)");
       showAnswer(true);
@@ -37,63 +37,58 @@ function guess() {
 function setHiddenFields() {
   answer.value = Math.floor(Math.random()*10000);
   answer.value.toString();
-  if(answer.value.length!==4)
-  {
     while(answer.value.length<4)
     {
-      answer.value= '0'.concat(answer.value);
+      answer.value= '0'+answer.value;
     }
-  }
-  attempt.value =0;
+  attempt.value ="0";
 }
 function setMessage(msg) {
 document.getElementById('message').innerHTML=msg;
 }
 
-function validateInput(var1) {
-  if (var1.length === 4)
+function validateInput(input) {
+  if (input.length !== 4)
   {
-    return true;
-  }
-  else {
     setMessage("Guesses must be exactly 4 characters long.");
     return false;
   }
+  return true;
 }
 
 function getResults(input) {
-  var position='<div>';
+  var position='<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
   for(var k=0; k<input.length; k++){
     var test = input.substr(k,1);
     if (test === answer.value.substr(k,1)){
-      position =position+'<span class="glyphicon glyphicon-ok">'+k+'</span>';
+      position =position+'<span class="glyphicon glyphicon-ok"></span>';
     }
     else if(answer.value.indexOf(test)!==-1){
-      position=position+'<span class="glyphicon glyphicon-transfer">'+k+'</span>';
+      position=position+'<span class="glyphicon glyphicon-transfer"></span>';
     }
     else {
-        position=position+'<span class="glyphicon glyphicon-remove">'+k+'</span>';
+        position=position+'<span class="glyphicon glyphicon-remove"></span>';
       }
   }
-  position=position+'</div>';
-  document.getElementById('results').innerHTML='<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">'
-  +'<span class="col-md-6">'+position+'</span></div></div>';
-  if ((input===answer.value)){
+  position=position+'</div></div>';
+  document.getElementById('results').innerHTML+=position;
+  if ((input==answer.value)){
     return true;
   }
     return false;
 
 }
 
-function showAnswer(status) {
-  document.getElementById('code').innerHTML = answer.value;
-  var total = document.getElementById('code');
-  if (status){
-    total.className += ' success';
+function showAnswer(success) {
+  let code = document.getElementById('code');
+  if (success){
+    code.className += ' success';
   }
   else {
-    total.className += ' failure';
+    code.className += ' failure';
   }
+  document.getElementById('code').innerHTML = answer.value;
+
 }
 
 function showReplay() {
