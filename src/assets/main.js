@@ -18,6 +18,9 @@ function guess() {
     }
     getResults(input.value);
 
+    if ((answer.value !== input.value) && (attempt.value < 10)) {
+      setMessage("Incorrect, try again.");
+    }
 
 }
 
@@ -80,10 +83,6 @@ function getResults(input) {
     showAnswer(false);
     showReplay();
     return false;
-  }
-
-  if ((answer.value !== input) && (attempt.value < 10)) {
-    setMessage("Incorrect, try again.");
   }
 
 
