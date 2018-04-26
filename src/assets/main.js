@@ -24,11 +24,11 @@ function guess() {
 function setHiddenFields() {
   answer.value = Math.floor(Math.random()*10000);
   answer.value.toString();
-  if(answer.length!==4)
+  if(answer.value.length!==4)
   {
-    while(answer.length<4)
+    while(answer.value.length<4)
     {
-      answer.value='0'+answer.value;
+      answer.value= '0'.concat(answer.value);
     }
   }
   attempt.value =0;
