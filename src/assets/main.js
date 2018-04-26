@@ -88,3 +88,13 @@ function getResults(input) {
     return false;
   }
 }
+
+function showAnswer(status) {
+  document.getElementById('code').innerHTML = answer.value;
+  if (status){
+    document.getElementById('code').classList.add(' success');
+  }
+  else {
+    document.getElementById('code').classList.add(' failure');
+  }
+}
