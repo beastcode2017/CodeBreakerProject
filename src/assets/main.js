@@ -12,7 +12,6 @@ function guess() {
     if (!validateInput(input.value))
     {
       return false;
-
     }
     else {
       attempt.value+=1;
@@ -88,19 +87,4 @@ function getResults(input) {
   else {
     return false;
   }
-}
-
-function showAnswer(status) {
-  document.getElementById('code').innerHTML = answer.value;
-  if (status){
-    document.getElementById('code').classList.add(' success');
-  }
-  else {
-    document.getElementById('code').classList.add(' failure');
-  }
-}
-
-function showReplay() {
-  document.getElementById('guessing-div').style.display="none";
-  document.getElementById('replay-div').style.display="block";
 }
