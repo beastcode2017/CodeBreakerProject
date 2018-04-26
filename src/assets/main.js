@@ -17,10 +17,20 @@ function guess() {
       attempt.value+=1;
     }
     getResults(input.value);
-
-    if ((answer.value !== input.value) && (attempt.value < 10)) {
-      setMessage("Incorrect, try again.");
+    if ((correct ===4) && (input===answer.value)){
+      setMessage("You Win! :)");
+      showAnswer(true);
+      showReplay();
+      return true;
     }
+
+     if (attempt.value >= 10){
+      setMessage("You Lose! :(");
+      showAnswer(false);
+      showReplay();
+      return false;
+    }
+
 
 }
 
@@ -72,19 +82,11 @@ function getResults(input) {
   document.getElementById('results').innerHTML='<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">'
   +'<span class="col-md-6">'+position+'</span></div class="col-md-6"></div class="row">';
   if ((correct ===4) && (input===answer.value)){
-    setMessage("You Win! :)");
-    showAnswer(true);
-    showReplay();
     return true;
   }
-
-   if (attempt.value >= 10){
-    setMessage("You Lose! :(");
-    showAnswer(false);
-    showReplay();
+  else {
     return false;
   }
-
 
 }
 
