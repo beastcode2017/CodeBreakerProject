@@ -74,7 +74,7 @@ function getResults(input) {
     showReplay();
     return true;
   }
-  else if (attempt.value < 10) {
+  else if ((input!==answer.value)&&(attempt.value < 10)) {
     setMessage("Incorrect, try again.");
   }
   else {
