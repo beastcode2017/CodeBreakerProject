@@ -80,8 +80,11 @@ function getResults(input) {
     showReplay();
     return false;
   }
-  else {
+  else if ((answer.value!==input)&&(attempt.value<10)){
     setMessage("Incorrect, try again.");
+  }
+  else{
+    return false;
   }
 
 }
