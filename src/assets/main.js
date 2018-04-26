@@ -78,7 +78,7 @@ function getResults(input) {
   position=position+'</div>';
   document.getElementById('results').innerHTML='<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">'
   +'<span class="col-md-6">'+position+'</span></div></div>';
-  if ((correct ===4) && (input===answer.value)){
+  if ((input===answer.value)){
     return true;
   }
     return false;
