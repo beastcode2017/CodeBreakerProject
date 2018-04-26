@@ -18,11 +18,7 @@ function guess() {
     }
     getResults();
 
-    if(getResults){
-      setMessage("You Win! :)");
-      showAnswer(true);
-      showReplay();
-    }
+
 
 
 }
