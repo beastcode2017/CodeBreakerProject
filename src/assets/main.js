@@ -17,21 +17,7 @@ function guess() {
       attempt.value+=1;
     }
 
-    getResults();
 
-    if(getResults){
-      setMessage("You Win! :)");
-      showAnswer(true);
-      showReplay();
-    }
-    else if ((getResults===false) && (attempt>=10)) {
-      setMessage("You Lose! :(");
-      showAnswer(false);
-      showReplay();
-    }
-    else {
-      setMessage("Incorrect, try again.");
-    }
 }
 
 //implement new functions here
